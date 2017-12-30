@@ -1,12 +1,12 @@
 import getGITUserById from '../../api/getGITUserById';
 
 export default function getGITUserByIdProcess(id) {
-  console.log('getGITUserByIdProcess..............', id);
+  //console.log('getGITUserByIdProcess..............', id);
 
   return (dispatch, getState, env) => {
     return getGITUserById(id)
       .then(users => {
-        console.log('WHATs ON', users);
+        //console.log('TEST', users);
 
         if (users[0].id === 'error') {
           dispatch({ type: 'GIT_USER_ERROR' });
@@ -18,7 +18,7 @@ export default function getGITUserByIdProcess(id) {
         return users;
       })
       .catch(error => {
-        console.log('PROCESS ERROR', error);
+        //console.log('PROCESS ERROR', error);
         dispatch({ type: 'GIT_USER_ERROR' });
       });
   };

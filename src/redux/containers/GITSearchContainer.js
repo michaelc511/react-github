@@ -29,8 +29,8 @@ import { withRouter } from 'react-router-dom';
 
 // 4C) mapStateToProps function
 function mapStateToProps(state, ownProps) {
-  console.log('GIT SEARCH CONTAINTER MAPTOSTATE');
-  console.log(state);
+  //console.log('GIT SEARCH CONTAINTER MAPTOSTATE');
+  //console.log(state);
   return {
     //mccode /////
     usersData: state.usersData,
@@ -52,7 +52,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   // if (ownProps.match.params.userId === 'undefined') {
   //   defaultUser = 'michaelc511';
   // }
-  console.log('1 GITSEARCHContainer.....................................................', defaultUser);
+  //console.log('1 GITSEARCHContainer.....................................................', defaultUser);
 
   return {
     // onMount

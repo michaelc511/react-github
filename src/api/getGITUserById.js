@@ -11,21 +11,21 @@ export default function getGITUserById(id) {
   )
     .then(handleErrors)
     .then(response => {
-      console.log('GIT USER RESPONSE... ', response);
+      //console.log('GIT USER RESPONSE... ', response);
       return response.json();
     })
     .then(userData => {
       return userData;
     })
     .catch(function(error) {
-      console.log('error ' + error.message);
+      //console.log('error ' + error.message);
       return [{ id: 'error', subject: error.message }];
     });
 } // end of function
 
 function handleErrors(response) {
   if (!response.ok) {
-    console.log('Handle errors', response);
+    //console.log('Handle errors', response);
     throw Error(response.status + ' ' + response.statusText + ' error');
   }
   return response;

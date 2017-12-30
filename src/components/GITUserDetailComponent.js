@@ -7,13 +7,13 @@ import React from 'react';
 export default function GITUserDetailComponent(props) {
   //  if (!userpref) return null;
 
-  console.log('GITUserDetailComponent>>>>>>>>>>>>>');
-  console.log('Is Array?', Array.isArray(props.usersData));
-  console.log('Type of ?', typeof props.usersData);
-
-  console.log('BREAK IT DOWN >>>>>>>>>>>>>');
-
-  console.log('props.usersData', props.usersData);
+  // console.log('GITUserDetailComponent>>>>>>>>>>>>>');
+  // console.log('Is Array?', Array.isArray(props.usersData));
+  // console.log('Type of ?', typeof props.usersData);
+  //
+  // console.log('BREAK IT DOWN >>>>>>>>>>>>>');
+  //
+  // console.log('props.usersData', props.usersData);
   //let user = props.userData[0];
   // console.log('ONE ELEMENT', props.userData[0]); // WORKS FINE
   // console.log('ID OF ONE ELEMENT', props.userData[0].id); // DOES NOT WORK id
@@ -24,7 +24,6 @@ export default function GITUserDetailComponent(props) {
   //   console.log('NOT FOUND');
   // }
   if (props.usersData && Array.isArray(props.usersData)) {
-    console.log('YESSSSS');
     if (props.usersData[0].owner.avatar_url !== 'undefined') {
       photourl = props.usersData[0].owner.avatar_url;
     }
@@ -38,19 +37,20 @@ export default function GITUserDetailComponent(props) {
           <div className="card-content">
             <span className="card-title" />
             <p />
-            <table width="600">
+            <table>
               <tbody>
                 <tr>
-                  <td>
+                  <td nowrap width="50%">
                     <b>User id:</b> {props.usersData[0].owner.login}
                   </td>
 
-                  <td>
+                  <td width="30%">
                     <b>GITHub URL:</b>{' '}
                     <a href={props.usersData[0].owner.html_url} target="_blank">
                       {props.usersData[0].owner.html_url}
                     </a>
                   </td>
+                  <td width="20%" />
                 </tr>
                 {props.usersData.map(
                   userData => {

@@ -69,12 +69,12 @@ export default function wtnRootReducer(
       return { ...currentState, currentRental: action.rental, showForm2: false };
 
     case 'GET_USER':
-      console.log('REDUCER GET_USER REDUCER .....', action.users);
+      //console.log('REDUCER GET_USER REDUCER .....', action.users);
 
       return { ...currentState, usersData: action.users };
 
     case 'GIT_USER_ERROR':
-      console.log('REDUCER GIT_USER_ERROR REDUCER .....', action.users);
+      //  console.log('REDUCER GIT_USER_ERROR REDUCER .....', action.users);
 
       return { ...currentState, usersData: action.users };
 
