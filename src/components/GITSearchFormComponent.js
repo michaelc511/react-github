@@ -35,7 +35,7 @@ export default function GITSearchFormComponent(props) {
         <div className="row">
           <div className="input-field col s3">
             GITHub User Name :<br />
-            <input value="notereherer" required name="keyword" placeholder="User Search: michaelc511, analuz" id="keyword" type="text" className="validate" />
+            <input required name="keyword" placeholder="User Search: michaelc511, analuz" id="keyword" type="text" className="validate" />
           </div>
 
           <div className="input-field col s5">

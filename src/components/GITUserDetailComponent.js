@@ -44,8 +44,7 @@ export default function GITUserDetailComponent(props) {
                   <td>
                     <b>User id:</b> {props.usersData[0].owner.login}
                   </td>
-                </tr>
-                <tr>
+
                   <td>
                     <b>GITHub URL:</b>{' '}
                     <a href={props.usersData[0].owner.html_url} target="_blank">
