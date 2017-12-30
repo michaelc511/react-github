@@ -34,8 +34,8 @@ export default function GITSearchFormComponent(props) {
       <form id="theForm" className="col s12" onSubmit={handleKeyword}>
         <div className="row">
           <div className="input-field col s3">
-            Keyword :<br />
-            <input name="keyword" placeholder="User Search: larryellison, larrypage" id="keyword" type="text" className="validate" />
+            GITHub User Name :<br />
+            <input value="notereherer" required name="keyword" placeholder="User Search: michaelc511, analuz" id="keyword" type="text" className="validate" />
           </div>
 
           <div className="input-field col s5">

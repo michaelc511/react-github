@@ -70,13 +70,14 @@ export default function wtnRootReducer(
 
     case 'GET_USER':
       console.log('REDUCER GET_USER REDUCER .....', action.users);
-      //mc//console.log(action.rentals);
 
-      //mc//console.log(currentState.search);
-      //mc//console.log(resetSearch);
-
-      // return { ...currentState, currentRental: action.user };
       return { ...currentState, usersData: action.users };
+
+    case 'GIT_USER_ERROR':
+      console.log('REDUCER GIT_USER_ERROR REDUCER .....', action.users);
+
+      return { ...currentState, usersData: action.users };
+
     //////////////////////////////
     case 'GET_PREFS':
       //mc//console.log('GET_PREFS');
@@ -176,61 +177,61 @@ export default function wtnRootReducer(
     //
     //   return { ...currentState, showUserForm: action.showUserForm, showLoginForm: action.showLoginForm };
     // // D
-    // case 'CREATE_USER':
-    //   //mc//console.log('CREATE_USER');
-    //   return { ...currentState, showUserForm: action.showUserForm };
-    // //////////////////////////////////////////////////////////////////////////////////////////
-    // case 'SHOW_LOGIN_FORM':
-    //   //mc//console.log('SHOW_LOGIN_FORM');
-    //
-    //   return { ...currentState, token: action.token, showLoginForm: action.showLoginForm, showUserForm: action.showUserForm };
-    // case 'LOGOUT':
-    //   //mc//console.log('LOGOUT REDUCER');
-    //
-    //   return {
-    //     ...currentState,
-    //     token: action.token,
-    //     authenticatedUser: action.authenticatedUser,
-    //     userRole: action.userRole,
-    //     showLoginForm: action.showLoginForm,
-    //     userName: action.userName
-    //   };
-    //
-    // case 'LOGIN_USER':
-    //   //mc//console.log('LOGIN USER ' + action.token);
-    //
-    //   return {
-    //     ...currentState,
-    //     token: action.token,
-    //     authenticatedUser: action.authenticatedUser,
-    //     userRole: action.userRole,
-    //     userName: action.userName,
-    //     showLoginForm: action.showLoginForm
-    //   };
-    //
-    // case 'LOGIN_ERROR':
-    //   //mc//console.log('LOGON ERROR ' + action.loginError);
-    //
-    //   return {
-    //     ...currentState,
-    //     loginError: action.loginError
-    //   };
-    //
-    // case 'CREATE_USER_ERROR':
-    //   //mc//console.log('CREATE USER ERROR ' + action.loginError);
-    //
-    //   return {
-    //     ...currentState,
-    //     loginError: action.loginError
-    //   };
-    //
-    // case 'LOGIN_RESET':
-    //   //mc//console.log('LOGIN_RESET ERROR ' + action.loginError);
-    //
-    //   return {
-    //     ...currentState,
-    //     loginError: action.loginError
-    //   };
+    case 'CREATE_USER':
+      //mc//console.log('CREATE_USER');
+      return { ...currentState, showUserForm: action.showUserForm };
+    //////////////////////////////////////////////////////////////////////////////////////////
+    case 'SHOW_LOGIN_FORM':
+      //mc//console.log('SHOW_LOGIN_FORM');
+
+      return { ...currentState, token: action.token, showLoginForm: action.showLoginForm, showUserForm: action.showUserForm };
+    case 'LOGOUT':
+      //mc//console.log('LOGOUT REDUCER');
+
+      return {
+        ...currentState,
+        token: action.token,
+        authenticatedUser: action.authenticatedUser,
+        userRole: action.userRole,
+        showLoginForm: action.showLoginForm,
+        userName: action.userName
+      };
+
+    case 'LOGIN_USER':
+      //mc//console.log('LOGIN USER ' + action.token);
+
+      return {
+        ...currentState,
+        token: action.token,
+        authenticatedUser: action.authenticatedUser,
+        userRole: action.userRole,
+        userName: action.userName,
+        showLoginForm: action.showLoginForm
+      };
+
+    case 'LOGIN_ERROR':
+      //mc//console.log('LOGON ERROR ' + action.loginError);
+
+      return {
+        ...currentState,
+        loginError: action.loginError
+      };
+
+    case 'CREATE_USER_ERROR':
+      //mc//console.log('CREATE USER ERROR ' + action.loginError);
+
+      return {
+        ...currentState,
+        loginError: action.loginError
+      };
+
+    case 'LOGIN_RESET':
+      //mc//console.log('LOGIN_RESET ERROR ' + action.loginError);
+
+      return {
+        ...currentState,
+        loginError: action.loginError
+      };
     // //////////////////////////////////////////////////////////////////////////////////////////
     //
 

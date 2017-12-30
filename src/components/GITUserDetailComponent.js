@@ -18,10 +18,10 @@ export default function GITUserDetailComponent(props) {
   // console.log('ONE ELEMENT', props.userData[0]); // WORKS FINE
   // console.log('ID OF ONE ELEMENT', props.userData[0].id); // DOES NOT WORK id
 
-  let photourl = 'https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png';
+  let photourl = '/images/github404.png';
 
-  // if (props.userData.avatar_url !== 'undefined') {
-  //   photourl = props.userData.avatar_url;
+  // if (props.usersData[0].id === 'error') {
+  //   console.log('NOT FOUND');
   // }
   if (props.usersData && Array.isArray(props.usersData)) {
     console.log('YESSSSS');
@@ -33,12 +33,12 @@ export default function GITUserDetailComponent(props) {
       <div className="   BusinessItemDetailComponent">
         <div className="card">
           <div className="card-image2">
-            <img src={photourl} alt="Nothing" width="400" />
+            <img src={photourl} alt="Nothing" width="300" />
           </div>
           <div className="card-content">
             <span className="card-title" />
             <p />
-            <table>
+            <table width="600">
               <tbody>
                 <tr>
                   <td>
@@ -47,26 +47,32 @@ export default function GITUserDetailComponent(props) {
                 </tr>
                 <tr>
                   <td>
-                    <b>GITHub URL:</b> <a href={props.usersData[0].owner.html_url}>{props.usersData[0].owner.html_url}</a>
+                    <b>GITHub URL:</b>{' '}
+                    <a href={props.usersData[0].owner.html_url} target="_blank">
+                      {props.usersData[0].owner.html_url}
+                    </a>
                   </td>
                 </tr>
                 {props.usersData.map(
                   userData => {
                     // //console.log('looping.........................');
                     // //console.log(props.search);
-                    let url = userData.owner.html_url + '/' + userData.name;
                     return (
                       // <div className="card-content">
                       //   <span className="card-title" />
                       //   <p />
                       //   <table>
                       //     <tbody>
-                      <tr>
+                      <tr key={userData.id}>
                         <td>
                           <b> Repo : </b>
-                          <a href={url}>
+                          <a href={userData.html_url} target="_blank">
                             {userData.full_name}
                           </a>
+                        </td>
+                        <td>
+                          <b> Description : </b>
+                          {userData.description}
                         </td>
                         <td>
                           <b> StarGazers : </b>
@@ -89,6 +95,17 @@ export default function GITUserDetailComponent(props) {
     );
   } else {
     // console.log('WHY?????');
-    return <div>Loading...the stuff..</div>;
+    return (
+      <div className="   BusinessItemDetailComponent">
+        <div className="card">
+          <div className="card-content">
+            <span className="card-title" />User Not Found
+          </div>
+          <div className="card-image2">
+            <img src={photourl} alt="Nothing" width="800" />
+          </div>
+        </div>
+      </div>
+    );
   }
 }

@@ -18,14 +18,14 @@ export default function getGITUserById(id) {
       return userData;
     })
     .catch(function(error) {
-      //mc//console.log('error ' + error.message);
+      console.log('error ' + error.message);
       return [{ id: 'error', subject: error.message }];
     });
 } // end of function
 
 function handleErrors(response) {
   if (!response.ok) {
-    //mc//console.log(response);
+    console.log('Handle errors', response);
     throw Error(response.status + ' ' + response.statusText + ' error');
   }
   return response;

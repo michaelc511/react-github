@@ -6,12 +6,20 @@ export default function getGITUserByIdProcess(id) {
   return (dispatch, getState, env) => {
     return getGITUserById(id)
       .then(users => {
+        console.log('WHATs ON', users);
+
+        if (users[0].id === 'error') {
+          dispatch({ type: 'GIT_USER_ERROR' });
+
+          return users;
+        }
+
         dispatch({ type: 'GET_USER', users });
         return users;
       })
       .catch(error => {
         console.log('PROCESS ERROR', error);
-        //dispatch({ type: 'CREATE_MESSAGE' });
+        dispatch({ type: 'GIT_USER_ERROR' });
       });
   };
 }

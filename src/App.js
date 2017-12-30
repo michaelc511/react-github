@@ -26,10 +26,10 @@ import BusinessPageContainer from './redux/containers/BusinessPageContainer';
 // import CreateFormPageContainer from './redux/containers/CreateFormPageContainer';
 //
 // // user   CreateUserContainer
-// import CreateUserContainer from './redux/containers/CreateUserContainer';
+import CreateUserContainer from './redux/containers/CreateUserContainer';
 //
 // // login LoginUserContainer
-// import LoginUserContainer from './redux/containers/LoginUserContainer';
+import LoginUserContainer from './redux/containers/LoginUserContainer';
 //
 // //
 //
@@ -92,11 +92,31 @@ export default class App extends Component {
                 component={GITSearchContainer}
               />
 
-              {/* 1. Search Main Page  */}
+              {/*  GITHUB Splash Page  */}
               <Route exact path="/" component={GITHomeComponent} />
 
+              {/* Stand Alone GIT Result Page  Not used at this moment */}
               {/* <Route exact path="/github/user/:userId" component={GITUserDetailPageContainer} /> */}
 
+              {/* Login/Register User to be implemented later for additional feature */}
+
+              {/*  <CreateUser   /> */}
+              <Route
+                exact
+                path="/register" //
+                history={history}
+                render={props => <CreateUserContainer {...props} />}
+              />
+
+              {/*  <Login  /> */}
+              <Route
+                exact
+                path="/login" //
+                history={history}
+                render={props => <LoginUserContainer {...props} />}
+              />
+
+              {/* Demos of Rental App */}
               <Route exact path="/reports/:rentalId" component={BusinessDetailPageContainer} />
               <Route exact path="/reports" component={BusinessPageContainer} />
 
@@ -134,21 +154,6 @@ export default class App extends Component {
                 // component={BusinessDetailPageContainer}
               /> */}
 
-              {/* 6 <CreateUser with stuff  /> */}
-              {/* <Route
-                exact
-                path="/register" //
-                history={history}
-                render={props => <CreateUserContainer {...props} />}
-              /> */}
-
-              {/* 7 <Login with stuff  /> */}
-              {/* <Route
-                exact
-                path="/login" //
-                history={history}
-                render={props => <LoginUserContainer {...props} />}
-              /> */}
               {/* <PageLayout item={{}} items={this.state.items} onAddItem={this.onAddItem} /> */}
             </Switch>
           </Router>
